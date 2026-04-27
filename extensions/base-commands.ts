@@ -21,26 +21,4 @@ export default function (pi: ExtensionAPI) {
     },
   });
 
-  // /explain - ask the agent to explain a file or concept
-  pi.registerCommand("explain", {
-    description: "Explain a file or concept",
-    getArgumentCompletions: (prefix) => {
-      // Could return file paths for tab completion here
-      return [];
-    },
-    handler: async (args, ctx) => {
-      if (!args) {
-        if (ctx.hasUI) {
-          ctx.ui.notify("Usage: /explain <file or concept>", "warning");
-        }
-        return;
-      }
-      await pi.sendUserMessage(
-        `Explain ${args} clearly. Start with the high-level purpose, ` +
-        `then walk through the key details. Use examples where helpful.`
-      );
-    },
-  });
-
-
 }

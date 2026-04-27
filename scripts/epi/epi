@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR/../../" 2>/dev/null
+exec bun run "$SCRIPT_DIR/epi.tsx" "$@"
