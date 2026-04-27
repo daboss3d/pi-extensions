@@ -1,0 +1,11 @@
+{
+  "name": "pi-extensions/base-commands",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Base slash commands for Pi Agent",
+  "main": "./base-commands.ts",
+  "type": "module",
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.70.2"
+  }
+}
