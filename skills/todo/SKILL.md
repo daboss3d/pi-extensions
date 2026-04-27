@@ -9,7 +9,7 @@ Manage a simple todo list stored as YAML files.
 
 ## Variables
 
-- **TODO_DIR**: `~/.pi/todos/` — Directory where todo files are stored. Create this directory if it does not exist.
+- **TODO_DIR**: `~/.agents/todos/` — Directory where todo files are stored. Create this directory if it does not exist.
 
 ## Todo File Format
 
