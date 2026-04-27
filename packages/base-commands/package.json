@@ -5,6 +5,10 @@
   "description": "Base slash commands for Pi Agent",
   "main": "./base-commands.ts",
   "type": "module",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["./base-commands.ts"]
+  },
   "peerDependencies": {
     "@mariozechner/pi-coding-agent": "^0.70.2"
   }

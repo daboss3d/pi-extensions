@@ -40,3 +40,36 @@ Interactive terminal UI to select which extensions from `dev/` should be loaded.
 ### Config
 
 Selections are saved to `dev/.selected` (one file name per line).
+
+## `ppi.sh` — Package picker for Pi
+
+Adds packages from the `packages/` directory into your project's `.pi/settings.json`.
+
+```bash
+./ppi.sh
+```
+
+**Flow:**
+1. Scans `packages/` directory for pi packages
+2. Interactive terminal UI to select packages
+3. Merges selected packages into `.pi/settings.json` in your current working directory
+
+**Use when:** You want to permanently add a package from this repo to a project.
+
+**Differs from `epi`:**
+- `epi` → `dev/` extensions, saves to `dev/.selected` (ephemeral, for `pi.sh`)
+- `ppi` → `packages/` packages, saves to `.pi/settings.json` (persistent, project-scoped)
+
+### Example output
+
+After selecting `base-commands`, your `.pi/settings.json` will contain:
+
+```json
+{
+  "packages": [
+    "/absolute/path/to/pi-extensions/packages/base-commands"
+  ]
+}
+```
+
+Existing settings (provider, model, theme) are preserved.
