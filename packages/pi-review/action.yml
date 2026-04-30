@@ -1,0 +1,54 @@
+name: "pi-reviewer"
+description: "AI-powered PR reviewer using the pi agent — model-agnostic"
+author: "zeflq"
+
+inputs:
+  github-token:
+    description: "GitHub token to post PR comments."
+    required: true
+
+  pi-api-key:
+    description: "Pi platform API key"
+    required: true
+
+  model:
+    description: "Model to use in provider/modelId format (e.g. anthropic/claude-opus-4-6)"
+    required: false
+
+  post-comment:
+    description: "Post review as a GitHub PR comment"
+    required: false
+    default: "true"
+
+  min-severity:
+    description: "Minimum severity level to report: info, warn, or critical (default: info)"
+    required: false
+    default: "info"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
+      working-directory: ${{ github.action_path }}
+
+    - name: Run review
+      shell: bash
+      working-directory: ${{ github.workspace }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        PI_API_KEY: ${{ inputs.pi-api-key }}
+        POST_COMMENT: ${{ inputs.post-comment }}
+        PI_REVIEWER_MODEL: ${{ inputs.model }}
+        MIN_SEVERITY: ${{ inputs.min-severity }}
+      run: node ${{ github.action_path }}/dist/src/ci/action-entry.js
+
+branding:
+  icon: "eye"
+  color: "blue"

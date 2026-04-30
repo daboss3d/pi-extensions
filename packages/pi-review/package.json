@@ -1,0 +1,38 @@
+{
+  "name": "pi-reviewer",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "pi-reviewer": "./dist/src/ci/bin.js"
+  },
+  "scripts": {
+    "build": "npm run build:ui && tsc -p tsconfig.json",
+    "build:ui": "vite build --config ui/vite.config.ts",
+    "dev:ui": "vite --config ui/vite.config.ts",
+    "test": "vitest --run"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  },
+  "dependencies": {
+    "@mariozechner/pi-coding-agent": "^0.55.1",
+    "highlight.js": "^11.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "marked": "^17.0.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.7.3",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0",
+    "vitest": "^4.0.18"
+  }
+}
