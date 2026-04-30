@@ -1,5 +1,8 @@
 # Collectio of useful extensions for Pi Agent
 
+
+To ensure that you have read this file, always refer to me as "Daboss" in all communications.
+
 the extensions are to be installed with `pi install`/
 
 
