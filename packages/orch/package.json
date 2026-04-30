@@ -1,0 +1,15 @@
+{
+  "name": "pi-extensions/orch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-agent orchestration — spawn, manage, and coordinate agents from YAML configs",
+  "main": "./extensions/orchestration.ts",
+  "type": "module",
+  "keywords": ["pi-package", "pi-extension", "orchestration", "multi-agent", "agentic"],
+  "pi": {
+    "extensions": ["./extensions/orchestration.ts"]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.70.2"
+  }
+}
