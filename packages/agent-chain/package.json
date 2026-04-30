@@ -1,0 +1,15 @@
+{
+  "name": "pi-extensions/agent-chain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sequential pipeline orchestrator — runs opinionated, repeatable agent workflows",
+  "main": "./agent-chain.ts",
+  "type": "module",
+  "keywords": ["pi-package", "pi-extension", "agent-chain", "pipeline", "agentic"],
+  "pi": {
+    "extensions": ["./agent-chain.ts"]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.70.2"
+  }
+}
