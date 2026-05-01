@@ -1,3 +1,6 @@
+# external packages
+packages/plannotator/**
+
 # Logs
 logs
 *.log
